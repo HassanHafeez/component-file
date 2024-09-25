@@ -1,0 +1,70 @@
+.profile-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 100px;
+    }
+  
+  .cover-photo {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Rounded Button for Changing Cover Picture */
+  .change-cover-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .cover-btn {
+    border-radius: 30px; 
+    padding: 8px 16px;
+    font-size: 14px;
+}
+  /* Profile Picture */
+  .profile-picture {
+    position: absolute;
+    bottom: -50px; /* Adjust to control profile picture position */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 5px solid white; /* White border around profile pic */
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Camera Icon for Profile Picture */
+  .change-profile-btn {
+    position: absolute;
+    bottom: 6px;
+    right: 3px;
+  }
+  
+  .profile-icon-btn {
+    background-color: rgba(0, 0, 0, 0.966); /* Semi-transparent background */
+    color: white;
+    padding: 4px;
+    border-radius: 50%;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
