@@ -1,70 +1,294 @@
-.profile-container {
-    position: relative;
-    width: 100%;
-    height: auto;
+.profile-container{
+  /* background-color: #f2f2f2; */
+  /* margin-bottom: 10px; */
+}
+
+.profile-name {
+    font-size: 2em;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 8px;
+  }
+  
+  .profile-location {
+    font-size: 0.9em;
+    text-align: center;
+    color: #777;
+    margin-bottom: 16px;
+  }
+  
+  .profile-description {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+ /* Social Links Styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Add space between the icons */
+    margin-top: 20px;
+  }
+  
+  /* Increase Icon Size */
+  .social-link svg {
+    font-size: 3rem; /* Increase icon size further */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover transitions */
+  }
+  
+  /* Hover Effect on Icons */
+  .social-link:hover svg {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    color: black; /* Change icon color on hover */
+  }
+  
+  
+  
+  .stats {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; 
+    margin-top: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-item {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .stat-title {
+    display: block;
+    font-size: 0.9em;
+    color: #6e6e6e;
+    margin: 0;
+  }
+  
+  .stat-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+  }
+  
+  .stats .stat-item:not(:last-child) {
+    margin-right: 15px;
+  }
+  
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-button,
+.dashboard-button {
+    padding: 10px 20px; /* Adjust padding for consistent sizing */
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 150px; /* Set both buttons to have equal width */
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-button {
+    background-color: #d9d9d9;
+    color: black;
+}
+
+.dashboard-button {
+    background-color: black;
+    color: white;
+}
+
+/* Margin between buttons */
+.profile-button {
+    margin-right: 20px; /* Add margin between buttons */
+}
+
+/* Button Hover Effect */
+.profile-button:hover,
+.dashboard-button:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transform: translateY(-2px) scale(1.05); /* Slightly elevate and scale the button */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for both effects */
+}
+
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and medium screens (768px and below) */
+@media (max-width: 768px) {
+  .profile-button,
+  .dashboard-button {
+      width: 110px; /* Same width for both buttons */
+      padding: 6px 12px; /* Same padding */
+      font-size: 0.9em; /* Same font size */
+  }
+
+  .profile-button {
+      margin-right: 10px; /* Reduce margin between buttons */
+  }
+}
+
+/* For small screens and mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .profile-button,
+  .dashboard-button {
+      width: 100%; /* Full width buttons */
+      padding: 10px; /* Increase padding for better touch areas */
+      font-size: 0.9em; /* Adjusted font size for readability */
+  }
+
+  .profile-button {
+      margin-right: 0; /* No margin needed when stacked */
+  }
+
+  .buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: stretch; /* Make buttons take full width */
+  }
+
+  .profile-button,
+  .dashboard-button {
+      margin-bottom: 10px; /* Space between stacked buttons */
+  }
+}
+
+
+
+
+
+.layout {
+  text-align: center;
+  margin: 20px;
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Make the button take full width of the container */
+  max-width: 420px; /* Set a maximum width to avoid being too wide */
+  display: block; /* Ensure the button is treated as a block element */
+  margin: 15px auto; /* Center the button horizontally */
+}
+
+
+.button-container button:hover {
+  background-color: #d9d9d9;
+}
+
+.button-container .active {
+  background-color: black;
+  color:white;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.image-grid img {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+}
+  
+  
+
+
+    
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .profile-name {
+      font-size: 1.8em; 
     }
   
-  .cover-photo {
-    width: 100%;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
+    .profile-location {
+      font-size: 0.8em; 
+    }
+  
+    .profile-description {
+      font-size: 0.9em; 
+    }
+  
+    .social-links {
+      flex-direction: row; 
+      display: flex;
+    }
+  
+    .social-link {
+      margin-top: 10px; 
+    }
+  
+    .stats {
+      flex-direction: row; 
+      padding: 5px; 
+    }
+  
+    .stat-item {
+      margin-left: 0; 
+      margin-right: 0; 
+      margin-bottom: 10px; 
+    }
+  
+    .buttons {
+      flex-direction: row;
+    }
   }
   
-  .cover-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  @media (max-width: 480px) {
+    .profile-name {
+      font-size: 1.5em;
+    }
   
-  /* Rounded Button for Changing Cover Picture */
-  .change-cover-btn {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-  }
+    .profile-location {
+      font-size: 0.7em; 
+    }
   
-  .cover-btn {
-    border-radius: 30px; 
-    padding: 8px 16px;
-    font-size: 14px;
-}
-  /* Profile Picture */
-  .profile-picture {
-    position: absolute;
-    bottom: -50px; /* Adjust to control profile picture position */
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    border: 5px solid white; /* White border around profile pic */
-    width: 150px;
-    height: 150px;
-  }
+    .profile-description {
+      font-size: 0.8em; 
+    }
   
-  .profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+    .stats {
+      margin-top: 10px; 
+    }
   
-  /* Camera Icon for Profile Picture */
-  .change-profile-btn {
-    position: absolute;
-    bottom: 6px;
-    right: 3px;
-  }
-  
-  .profile-icon-btn {
-    background-color: rgba(0, 0, 0, 0.966); /* Semi-transparent background */
-    color: white;
-    padding: 4px;
-    border-radius: 50%;
-  }
-  
-  input[type="file"] {
-    display: none;
+    .profile-button,
+    .dashboard-button {
+      width: 100%; 
+      margin-top: 10px; 
+    }
   }
   
