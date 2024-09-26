@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProfilePage from './ProfileHeadertem';
 import './PortfolioMain.css'; 
 import PlaceIcon from '@mui/icons-material/Place';
@@ -14,6 +14,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 
 
 const PortfolioMain = () => {
+  const [activeTab, setActiveTab] = useState('All Posts');
   return (
     <>
       <ProfilePage isEdit={false} />
@@ -56,9 +57,65 @@ const PortfolioMain = () => {
         </div>
 
         <div className="buttons">
-            <button className="profile-button"><DriveFileRenameOutlineIcon/> Edit Profile</button>
+            <button className="profile-button"> Edit Profile</button>
             <button className="dashboard-button"> Dashboard</button>
-        </div>
+        </div>  
+
+
+        <div className="layout">
+      <div className="button-container">
+        <button
+          className={activeTab === 'All Posts' ? 'active' : ''}
+          onClick={() => setActiveTab('All Posts')}
+        >
+          All posts
+        </button>
+        <button
+          className={activeTab === 'Recent Uploads' ? 'active' : ''}
+          onClick={() => setActiveTab('Recent Uploads')}
+        >
+          Favorite
+        </button>
+        
+        <button
+          className={activeTab === 'Saved' ? 'active' : ''}
+          onClick={() => setActiveTab('Saved')}
+        >
+          Private
+        </button>
+
+        <button
+          className={activeTab === 'Download' ? 'active' : ''}
+          onClick={() => setActiveTab('Download')}
+        >
+          Download
+        </button>
+
+      </div>
+
+      {/* Image section */}
+      <div className="image-container">
+        {activeTab === 'All Posts' && (
+          <div className="image-grid">
+            <img src="https://via.placeholder.com/300" alt="Post 1" />
+            <img src="https://via.placeholder.com/300" alt="Post 2" />
+            <img src="https://via.placeholder.com/300" alt="Post 3" />
+          </div>
+        )}
+        {activeTab === 'Recent Uploads' && (
+          <div className="image-grid">
+            <img src="https://via.placeholder.com/300" alt="Upload 1" />
+            <img src="https://via.placeholder.com/300" alt="Upload 2" />
+          </div>
+        )}
+        {activeTab === 'Saved' && (
+          <div className="image-grid">
+            <img src="https://via.placeholder.com/300" alt="Saved 1" />
+          </div>
+        )}
+      </div>
+    </div>
+
 
 
 
